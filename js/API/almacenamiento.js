@@ -7,8 +7,8 @@ function getBD(){
 function actualizarBD(rutas){
 	getBD().transaction(function(tx){
 			tx.executeSql('CREATE TABLE IF NOT EXISTS rutas (id unique, nombre)');
-			for(i=0; i<rutas.length; i++){
-				tx.executeSql('INSERT INTO rutas (nombre) VALUES ("'+rutas.nombre+'")');
+			for(i=0; i<10; i++){
+				tx.executeSql('INSERT INTO rutas (nombre) VALUES ("'+i+'")');
 			}
 		},function(err){
 			alert('Error: ' + err.code);
